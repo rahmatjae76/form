@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TanggalMuda - FORMULIR PENGAJUAN</title>
+    <title>TanggalMuda - Platform Keuangan & Pembiayaan EWA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -240,7 +240,6 @@
             </div>
         </section>
 
-        <!-- REGISTER PAGE VIEW -->
         <section id="view-register" class="hidden w-full bg-slate-50 py-4">
             <div class="max-w-xl mx-auto px-4 w-full">
                 <div class="bg-white rounded-2xl p-5 sm:p-8 shadow-xl border border-slate-200 relative">
@@ -426,7 +425,6 @@
             </div>
         </section>
 
-        <!-- STATUS PAGE VIEW -->
         <section id="view-status" class="hidden w-full bg-slate-50 py-6">
             <div class="max-w-xl mx-auto px-4 w-full">
                 <div class="bg-white rounded-2xl p-5 sm:p-8 shadow-xl border border-slate-200 relative">
@@ -551,9 +549,8 @@
         </div>
     </div>
 
-    <!-- JavaScript Controller with JSONP Google Sites Support -->
     <script>
-        <!-- const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIO5OyW8GH6x2MinnpoLRlgHW2V66sCvnlsG2mAO2xe5joYyMxk4v8VGLdaGrvhG0TpA/exec"; -->
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIO5OyW8GH6x2MinnpoLRlgHW2V66sCvnlsG2mAO2xe5joYyMxk4v8VGLdaGrvhG0TpA/exec";
         
         let listPerusahaanData = [];
         let currentCameraType = null;
@@ -760,9 +757,9 @@
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'text/plain;charset=utf-8', // Crucial to avoid CORS OPTIONS preflight
+                    'Content-Type': 'text/plain;charset=utf-8', 
                 },
-                redirect: 'follow', // Required for Google Apps Script Web Apps
+                redirect: 'follow', 
                 body: JSON.stringify({ action: 'verifyAndInitEwa', payload: payload })
             })
             .then(res => res.json())
@@ -971,7 +968,7 @@
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'text/plain;charset=utf-8', // Bypass CORS preflight
+                    'Content-Type': 'text/plain;charset=utf-8', 
                 },
                 redirect: 'follow',
                 body: JSON.stringify({ action: 'registerMember', payload: payload })
